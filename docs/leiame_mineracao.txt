@@ -1,0 +1,19 @@
+# Data de alteração: 6/03/20
+
+# Download: http://sigmine.dnpm.gov.br/webmap/
+
+# DATUM: SIRGAS 2000
+
+# Atualização dos dados: diariamente às 24h, apresentando em sua visualização a defasagem de um dia.
+logo, é preciso estabeler uma data para o download e reportar isso no ms. 
+
+# informações relevantes na tabela de atributos: 
+ano: de criação?
+area_ha
+fase: identificar o que é cada fase do licenciamento. necessário criar 1 tabela glossário identificando os termos do licenciamento. 
+subs: tipo de mineral 
+uso: fim
+
+
+
+
