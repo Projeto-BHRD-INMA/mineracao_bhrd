@@ -1,14 +1,11 @@
 #############################
-# Exploratory mine fases
+# Exporting fortamated fases df to use in excel
 # Kele R. Firmiano
-# Data: 02/06/2020
+# Data: 19/06/2020
 #############################
-
-# NEED REVIEW, NOT FINISHED ################
 
 # reading pck ####
 library(plyr) # comibine df
-library(RColorBrewer) # colors
 
 fases <- read.csv("./outputs/b2_mine_fases_UPH.csv", sep = ",", h = T)
 
@@ -48,48 +45,8 @@ fs <- c("AP","AP","AP","AP","AP","AP","AP","AP","AP","CL","CL","CL","CL","CL","C
 
 fases <- cbind.data.frame(fases, fs) #combining label vector
 
-###############################################################
 # write new table
 write.csv(fases,
           file = "./outputs/fases_org.csv",
           row.names = FALSE) # fiz isso pra usar em separado, no excel
-
-###############################################################
-# Não rodei daqui em diante
-# Spliting uph ####
-pg <- fases[1:12, ] # 501: Piranga (MG)
-pc <- fases[13:23, ] # 502: Piracicaba (MG)
-sa <- fases[24:35, ] # 503: Santo Antonio (MG)
-sg <- fases[36:447, ] # 504: Suaçuí Grande (MG)
-cr <- fases[48:59, ] # 505: Caratinga (MG)
-mn <- fases[60:70, ] # 506: Manhuaçu (MG)
-sj <- fases[71:80, ] # 507: São José (ES)
-gd <- fases[81:89, ] # 508: Guandu (ES)
-smd <- fases[90:99, ] # 509: Santa Maria do Doce (ES)
-
-# defining colors by uph ####
-col_bhrd <- brewer.pal(9, "Paired") # defining colors
-
-# plot uph by fases ####
-uph <- c("Piranga", "Piracicaba", "Sto Antonio", "Suaçuí Grande", "Caratinga", "Manhuaçu", "São José", "Guandu", "Sta Mª do Doce") # label
-
-ap <- fases[1:9, ]
-plot(ap$perc_ha, las = 1, xlab = "Unidades de Planejamento Hídrico - BHRD", names.arg = uph)
-
-barplot(perc, las = 1,ylim = c(0, 100), xlab = "Unidades de Planejamento Hídrico - BHRD", ylab = "Área de mineração (%)",  names.arg = uph, col = col_bhrd)
-
-plot(fases$perc_ha ~ fases$fs, las = 1, ylim = c(0, 20), xlab = "Fases (DNPM)", ylab = "Área proporcional na BHRD", col = "brown")
-##############################################################
-
-
-
-
-
-
-
-
-
-
-
-
 
